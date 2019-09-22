@@ -1,0 +1,79 @@
+<app-breadcrumb [data]="breadcrumbData"></app-breadcrumb>
+<nav class="navbar row mb-3 search-bar-padding">
+    <div class="col-md-6">
+        <div class="input-group">
+            <input type="text" class="form-control form-control-dark" placeholder="search project"
+                aria-label="search project" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-info" type="button">
+                    <i-feather name="search"></i-feather>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ul class="navbar-nav mr-auto input-group">
+            <li class="nav-item pl-1">
+                <button class="btn btn-info" (click)="open(content)">
+                    <i-feather name="plus"></i-feather>
+                </button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<table class="table table-borderless">
+    <thead>
+        <tr>
+            <th>Project</th>
+            <th>Action</th>
+            <th>Tasks</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let project of projects">
+            <td>
+                <h5 class="mb-0">{{project.name}}</h5>
+                <div class="mb-1 text-muted"><i class="fa fa-clock-o"></i>
+                    <!-- {{ project.createdDate.toDate() | date }} -->
+                    Created on, 21 Aug 2019
+                </div>
+            </td>
+            <td> <button class="btn btn-info" (click)="open(content, 'update', project)">
+                    <i-feather name="edit-3"></i-feather>
+                </button>
+            </td>
+            <td>
+                <a class="btn btn-info" [routerLink]="['/dashboard/projects/', project._id, 'tasks']">
+                    <i-feather name="arrow-right"></i-feather>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #content let-modal>
+    <form [formGroup]="projectForm" (ngSubmit)="submitForm()">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLongTitle">Add Project</h5>
+                <button type="button" class="close base-color" aria-label="Close"
+                    (click)="modal.dismiss('Cross click')"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="inputName">Project</label>
+                    <input type="input" formControlName="name" class="form-control form-control-dark" id="inputName"
+                        aria-describedby="projectName" placeholder="Enter Project">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Cross click')"
+                    data-dismiss="modal">Close</button>
+                <button type="button" [disabled]="!projectForm.valid" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </form>
+</ng-template>

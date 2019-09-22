@@ -1,0 +1,55 @@
+<section>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><i>VEGAMWORK</i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto" *ngIf="isAppAuthenticate === false">
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="['/auth/login']">Login <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/auth/register']">Register</a>
+                </li>
+                <li class="nav-item" *ngIf="isAppAuthenticate === true">
+                    <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto" *ngIf="isAppAuthenticate === true">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row container mt-5">
+        <div class="col-md-8">
+            <ul class="list-group border-0 ml-5">
+                <li class="list-group-item display-4 border-0">
+                    <h1>Create Unlimited Projects</h1>
+                </li>
+                <li class="list-group-item display-4 border-0">
+                    <h1> Create Unlimited Tasks</h1>
+                </li>
+                <li class="list-group-item  display-4 border-0">
+                    <h1> Group Task Project Wise</h1>
+                </li>
+                <li class="list-group-item  display-4 border-0">
+                    <h1>Tract Task by status</h1>
+                </li>
+                <li class="list-group-item  display-4 border-0">
+                    <h1>Schedule Task with dates </h1>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <footer class="fixed-bottom text-center p-3 footer-color">
+        Task Manager v1.0.0 © Copyright 2019
+    </footer>
+</section>

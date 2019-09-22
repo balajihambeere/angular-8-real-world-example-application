@@ -1,0 +1,52 @@
+<app-breadcrumb [data]="breadcrumbData"></app-breadcrumb>
+<div class="card-deck">
+    <div class="card">
+        <div class="card-body">
+            <div class="display-4">Projects <a href="#"><span class="badge badge-primary">{{stats?.projects}}</span></a>
+            </div>
+        </div>
+        <div class="card-footer">
+            <small>Total project you have created</small>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="display-4">Tasks <a href="#"><span class="badge badge-primary">{{stats?.tasks}}</span></a></div>
+        </div>
+        <div class="card-footer">
+            <small>Total Tasks you have created</small>
+        </div>
+    </div>
+</div>
+<div class="card-deck mt-3">
+    <div class="card">
+        <div class="card-body ">
+            <div class="display-4">Completed <a href="#"><span
+                        class="badge badge-primary">{{stats?.completed}}</span></a>
+            </div>
+        </div>
+        <div class="card-footer">
+            <small>Tasks so far you have completed</small>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="display-4">In Progress <a href="#"><span
+                        class="badge badge-primary">{{stats?.inProgress}}</span></a>
+            </div>
+        </div>
+        <div class="card-footer">
+            <small>Tasks which are in progress</small>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="display-4">Cancelled <a href="#"><span
+                        class="badge badge-primary">{{stats?.cancelled}}</span></a>
+            </div>
+        </div>
+        <div class="card-footer">
+            <small>Tasks which are cancelled</small>
+        </div>
+    </div>
+</div>

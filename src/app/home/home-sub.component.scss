@@ -1,0 +1,21 @@
+.product-device {
+    position: absolute;
+    width: 250px;
+    height: 350px;
+    background-color: #B88BF1;
+    border-radius: 21px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  
+  .product-device::before {
+    position: absolute;
+    top: 10%;
+    right: 10px;
+    bottom: 10%;
+    left: 10px;
+    content: "";
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 5px;
+  }
+  

@@ -1,0 +1,29 @@
+<form [formGroup]="authForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+        <label for="inputEmail">Email address</label>
+        <input type="email" formControlName="email" class="form-control form-control-dark" id="inputEmail"
+            aria-describedby="emailHelp" placeholder="Enter email *">
+    </div>
+    <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input type="password" formControlName="password" class="form-control form-control-dark" id="inputPassword"
+            aria-describedby="passwordHelp" placeholder="Enter password *">
+    </div>
+    <div class="form-group" *ngIf="authType == 'register'">
+        <label for="inputConfirmPassword">Confirm Password</label>
+        <input type="password" formControlName="confirmPassword" class="form-control form-control-dark"
+            id="inputConfirmPassword" aria-describedby="passwordHelp" placeholder="Re Enter password *">
+    </div>
+    <footer>
+        <button type="submit" [disabled]="!authForm.valid" class="btn btn-primary">{{buttonTitle }}</button>
+        <span class="float-right mt-3" *ngIf="authType == 'register'">
+            Already have an account?
+            <a routerLink="/auth/login"> LogIn</a>
+        </span>
+        <span class="float-right mt-3" *ngIf="authType == 'login'">
+            Already have an account?
+            <a routerLink="/auth/register"> Register</a>
+        </span>
+    </footer>
+</form>
+<app-toasts aria-live="polite" aria-atomic="true"></app-toasts>

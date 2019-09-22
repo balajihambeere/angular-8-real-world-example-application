@@ -1,0 +1,90 @@
+html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            background-color: #121212 !important;
+            color: #ffffff;
+        }
+
+        .display-4 {
+            font-size: 3.0rem;
+        }
+
+        .dropdown-menu.collapsing {
+            display: block;
+        }
+
+
+        .bg-dark {
+            background-color: #000000 !important;
+        }
+
+        .list-group-item {
+            background-color: transparent;
+        }
+
+        .form-control-dark {
+            color: #fff;
+            background-color: rgba(255, 255, 255, .1);
+            border-color: rgba(255, 255, 255, .1);
+        }
+
+        .form-control-dark:focus {
+            border-color: transparent;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+        }
+
+        a {
+            color: #B88BF1 !important;
+        }
+
+        .btn-primary {
+            color: #000000;
+            background-color: #B88BF1;
+            border-color: #B88BF1;
+        }
+
+        .navbar-brand {
+            color: #FF0266 !important;
+        }
+
+        .footer-color {
+            color: #B88BF1 !important;
+        }
+
+        .card {
+            background-color: #1E1E1E !important;
+        }
+
+        .badge-primary {
+            color: #fff;
+            background-color: #B88BF1;
+        }
+
+        .dropdown-menu {
+            background-color: #1E1E1E;
+        }
+
+        .breadcrumb {
+            background-color: #1E1E1E;
+        }
+
+        .table {
+            color: #ffffff;
+        }
+
+        thead {
+            background-color: #1E1E1E;
+            color: #B88BF1 !important;
+        }
+
+        .status-color {
+            color: #FF0266;
+        }
+
+        .modal-content {
+            background-color: #1E1E1E !important;
+        }
+        .search-bar-padding {
+            padding: 0;
+        }

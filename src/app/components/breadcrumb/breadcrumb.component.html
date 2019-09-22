@@ -1,0 +1,17 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" *ngFor="let item of data"
+            [ngClass]="{'breadcrumb-item': 'breadcrumb-item',  'active': item.active}">
+            <a *ngIf="item.active == 'active'; else elseBlock" [routerLink]="[item.key]">{{item.value}}</a>
+            <ng-template #elseBlock>{{item.value}}</ng-template>
+        </li>
+    </ol>
+</nav>
+
+<!-- <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li *ngFor="let item of data" [ngClass]="{'breadcrumb-item': 'breadcrumb-item',  'active': item.active}">
+            <a [routerLink]="[item.key]">{{item.value}}</a>
+        </li>
+    </ol>
+</nav> -->

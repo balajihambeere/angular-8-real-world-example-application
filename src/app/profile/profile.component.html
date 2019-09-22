@@ -1,0 +1,35 @@
+<app-breadcrumb *ngIf="breadcrumbData" [data]="breadcrumbData"></app-breadcrumb>
+
+<div class="row">
+    <div class="col-md-4 card">
+        <div class="ml-5 mt-2 container">
+            <img src="../../assets//images/avatar.jpg" class="img-fluid rounded-circle" height="200" width="200" />
+            <div class="mt-2">
+                <button class="btn btn-primary mr-2">Change Picture</button>
+                <button *ngIf="user" (click)="renderToEditProfile(user?._id)" class="btn btn-primary">Edit
+                    profile</button>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-md-8 card">
+        <ul class="list-group border-0">
+            <li class="list-group-item display-4 border-0">
+                <h5> Email : {{user?.email}}</h5>
+            </li>
+            <li class="list-group-item display-4 border-0">
+                <h5> Full Name : {{user?.profile?.fullName}}</h5>
+            </li>
+            <li class="list-group-item  display-4 border-0">
+                <h5> Phone : {{user?.profile?.phone}}</h5>
+            </li>
+            <li class="list-group-item  display-4 border-0">
+                <h5> City : {{user?.profile?.city}}</h5>
+            </li>
+            <li class="list-group-item  display-4 border-0">
+                <h5> Country : {{user?.profile?.country}}</h5>
+            </li>
+        </ul>
+    </div>
+</div>
