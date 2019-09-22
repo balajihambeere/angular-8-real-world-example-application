@@ -9,7 +9,7 @@ The main purpose of this repository is to show a design and develop real-time ap
 # Features
 - Modular based Project folder structure
 - Modular based Routing
-- Authentication & Authorization using AuthGaurd
+- Authentication & Authorization using auth guard
 
 # Pre-reqs
 To build and run this app locally you will need a few things:
